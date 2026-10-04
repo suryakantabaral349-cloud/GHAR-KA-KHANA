@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghar ka Khana | Family Restaurant in Bhubaneswar</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Ghar ka Khana is a family restaurant in Bhubaneswar near Sum Hospital. We serve comforting, delicious Indian and Odia meals, including our signature Bhata Dalma Alubhaja. Dine-in only.">
+    <meta name="keywords" content="Ghar ka Khana Bhubaneswar, family restaurant in Bhubaneswar, restaurant near Sum Hospital, restaurant near Mo Bus Stand, food near Sum Hospital Road, vegetarian restaurant Bhubaneswar, non vegetarian restaurant Bhubaneswar, Dalma restaurant Bhubaneswar, home style food Bhubaneswar">
+    <meta name="author" content="Ghar ka Khana">
+    
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:title" content="Ghar ka Khana | Where every meal feels like home.">
+    <meta property="og:description" content="Comforting, delicious food made fresh for the whole family in Bhubaneswar.">
+    <meta property="og:type" content="website">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#D92D20', // Warm deep red
+                            yellow: '#FDB022', // Warm yellow/gold
+                            black: '#101828',
+                            cream: '#FFEA00', // High vibrant yellow background
+                            card: '#FFFFFF'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for specific behaviors -->
+    <style>
+        /* Hide scrollbar for clean look in galleries/menus if needed */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        
+        /* Fade in animation class */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Marker for Veg/Non-Veg */
+        .veg-mark { border: 1.5px solid #16a34a; }
+        .veg-mark div { background-color: #16a34a; }
+        .non-veg-mark { border: 1.5px solid #dc2626; }
+        .non-veg-mark div { background-color: #dc2626; }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Ghar ka Khana",
+      "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=1200",
+      "@id": "",
+      "url": "",
+      "telephone": "2345672345",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sum Hospital Road, beside Mo Bus Stand",
+        "addressLocality": "Bhubaneswar",
+        "addressRegion": "Odisha",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 20.296059, 
+        "longitude": 85.824539 
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "11:00",
+        "closes": "23:00"
+      },
+      "servesCuisine": ["Indian", "Odia"],
+      "acceptsReservations": "False",
+      "priceRange": "₹₹"
+    }
+    </script>
+</head>
+<body class="bg-brand-cream text-brand-black font-sans antialiased selection:bg-brand-yellow selection:text-brand-black">
+
+    <!-- Desktop Header & Sticky Nav -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300" id="main-header">
+        <div class="absolute inset-0 bg-slate-900/95 backdrop-blur-md shadow-sm border-b border-slate-800"></div>
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex flex-col">
+                    <span class="font-serif text-2xl md:text-3xl font-bold text-brand-red tracking-tight">Ghar ka Khana</span>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="#home" class="text-gray-200 hover:text-brand-yellow font-medium transition-colors">Home</a>
+                    <a href="#menu" class="text-gray-200 hover:text-brand-yellow font-medium transition-colors">Menu</a>
+                    <a href="#about" class="text-gray-200 hover:text-brand-yellow font-medium transition-colors">About</a>
+                    <a href="#gallery" class="text-gray-200 hover:text-brand-yellow font-medium transition-colors">Gallery</a>
+                    <a href="#contact" class="text-gray-200 hover:text-brand-yellow font-medium transition-colors">Contact</a>
+                </nav>
+
+                <!-- Desktop CTA -->
+                <div class="hidden lg:flex items-center">
+                    <a href="tel:2345672345" class="bg-brand-yellow hover:bg-yellow-400 text-brand-black px-6 py-2.5 rounded-full font-semibold transition-all shadow-md hover:shadow-lg flex items-center gap-2">
+                        <i class="ph-fill ph-phone"></i>
+                        Call Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 text-white focus:outline-none" aria-label="Toggle Menu">
+                    <i class="ph ph-list text-3xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-slate-900 z-40 transform translate-x-full transition-transform duration-300 ease-in-out pt-24 px-6 flex flex-col gap-6 lg:hidden">
+            <nav class="flex flex-col gap-6 text-xl text-center">
+                <a href="#home" class="mobile-link text-white font-medium pb-4 border-b border-slate-800">Home</a>
+                <a href="#menu" class="mobile-link text-white font-medium pb-4 border-b border-slate-800">Menu</a>
+                <a href="#about" class="mobile-link text-white font-medium pb-4 border-b border-slate-800">About</a>
+                <a href="#gallery" class="mobile-link text-white font-medium pb-4 border-b border-slate-800">Gallery</a>
+                <a href="#contact" class="mobile-link text-white font-medium pb-4 border-b border-slate-800">Contact</a>
+            </nav>
+            <div class="mt-auto pb-24 flex flex-col gap-4">
+                <a href="tel:2345672345" class="bg-brand-yellow text-brand-black py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 shadow-sm">
+                    <i class="ph-fill ph-phone text-xl"></i>
+                    2345672345
+                </a>
+                <p class="text-center text-gray-400 text-sm">Dine-in only • 11 AM - 11 PM</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section id="home" class="relative min-h-[90vh] flex items-center bg-brand-cream overflow-hidden">
+            <!-- Decorative blobs -->
+            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-yellow-100 rounded-full blur-3xl opacity-50 z-0"></div>
+            <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-red-100 rounded-full blur-3xl opacity-50 z-0"></div>
+
+            <div class="container mx-auto px-4 lg:px-6 relative z-10 py-12 lg:py-24 flex flex-col lg:flex-row items-center gap-12">
+                
+                <!-- Text Content -->
+                <div class="lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left fade-in-up">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-50 text-brand-red font-medium mb-6 text-sm">
+                        <i class="ph-fill ph-heart"></i>
+                        Family Restaurant in Bhubaneswar
+                    </div>
+                    <h1 class="font-serif text-6xl md:text-7xl lg:text-8xl font-bold text-brand-red leading-tight mb-6">
+                        Where every meal <br class="hidden md:block" />
+                        feels like home.
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-lg">
+                        Comforting, delicious food made fresh for the whole family. Join us for lunch or dinner and taste the authentic flavors of home.
+                    </p>
+                    <div class="flex flex-col sm:flex-row w-full sm:w-auto gap-4">
+                        <a href="#menu" class="bg-brand-red hover:bg-red-700 text-white px-8 py-4 rounded-full font-semibold transition-all shadow-md hover:shadow-xl text-center flex items-center justify-center gap-2">
+                            View Menu
+                            <i class="ph ph-arrow-right"></i>
+                        </a>
+                        <a href="tel:2345672345" class="bg-white border-2 border-brand-yellow hover:bg-yellow-50 text-brand-black px-8 py-4 rounded-full font-semibold transition-all text-center flex items-center justify-center gap-2">
+                            <i class="ph-fill ph-phone"></i>
+                            Call Now
+                        </a>
+                    </div>
+                    <div class="mt-8 flex items-center gap-3 text-gray-500 text-sm font-medium">
+                        <i class="ph ph-map-pin text-xl text-brand-red"></i>
+                        <span>Sum Hospital Road, beside Mo Bus Stand</span>
+                        <a href="https://maps.google.com/?q=Ghar+ka+Khana,+Sum+Hospital+Road,+beside+Mo+Bus+Stand,+Bhubaneswar,+Odisha" target="_blank" class="text-brand-red hover:underline ml-2">Get Directions</a>
+                    </div>
+                </div>
+
+                <!-- Image -->
+                <div class="lg:w-1/2 w-full fade-in-up" style="transition-delay: 200ms;">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl aspect-square md:aspect-[4/3] w-full max-w-2xl mx-auto border-4 border-white">
+                        <img src="https://images.unsplash.com/photo-1628294895950-9805252327bc?auto=format&fit=crop&q=80&w=1200" alt="Warm Indian Family Meal" class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700">
+                        <!-- Badge -->
+                        <div class="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm p-4 rounded-2xl shadow-lg flex items-center gap-4">
+                            <div class="w-12 h-12 bg-brand-yellow rounded-full flex items-center justify-center text-brand-black">
+                                <i class="ph-fill ph-clock text-2xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 font-medium">Open Daily</p>
+                                <p class="font-bold text-brand-black">11 AM - 11 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Signature Dish Highlight -->
+        <section class="py-20 bg-slate-900 text-white">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="bg-slate-800 border border-slate-700/50 rounded-[2.5rem] p-8 md:p-12 lg:p-16 flex flex-col md:flex-row items-center gap-12 shadow-soft fade-in-up">
+                    <div class="md:w-1/2 w-full relative">
+                        <div class="absolute inset-0 bg-brand-yellow transform rotate-3 rounded-3xl"></div>
+                        <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&q=80&w=1000" alt="Bhata Dalma Alubhaja - Signature Dish" class="relative z-10 w-full rounded-3xl shadow-lg object-cover aspect-[4/3]">
+                    </div>
+                    <div class="md:w-1/2 flex flex-col items-start">
+                        <div class="flex items-center gap-2 text-brand-yellow font-semibold tracking-wider uppercase text-sm mb-4">
+                            <i class="ph-fill ph-star"></i>
+                            Our Signature Dish
+                        </div>
+                        <h2 class="font-serif text-4xl md:text-5xl font-bold text-white mb-6">Bhata Dalma Alubhaja</h2>
+                        <p class="text-lg text-gray-300 mb-8 leading-relaxed">
+                            Simple, comforting and full of homely flavor — a classic combination made to feel just like home. Prepared fresh daily with locally sourced ingredients and traditional spices.
+                        </p>
+                        <a href="#menu" class="bg-brand-yellow hover:bg-yellow-400 text-brand-black px-8 py-3.5 rounded-full font-medium transition-all shadow-md flex items-center gap-2">
+                            Explore Menu <i class="ph ph-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Us Section -->
+        <section class="py-20 bg-brand-cream">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="text-center max-w-2xl mx-auto mb-16 fade-in-up">
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-brand-black mb-4">Why Ghar ka Khana?</h2>
+                    <p class="text-gray-800 text-lg">We bring the warmth of a family kitchen to your table.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="bg-slate-900 text-white p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow fade-in-up border border-slate-800">
+                        <div class="w-14 h-14 bg-yellow-500/10 rounded-2xl flex items-center justify-center text-brand-yellow mb-6">
+                            <i class="ph-fill ph-house-line text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Feels Like Home</h3>
+                        <p class="text-gray-300 leading-relaxed">Experience comforting food and a warm family atmosphere that makes you feel instantly at ease.</p>
+                    </div>
+                    
+                    <!-- Feature 2 -->
+                    <div class="bg-slate-900 text-white p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow fade-in-up border border-slate-800" style="transition-delay: 100ms;">
+                        <div class="w-14 h-14 bg-red-500/10 rounded-2xl flex items-center justify-center text-brand-red mb-6">
+                            <i class="ph-fill ph-plant text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Fresh Ingredients</h3>
+                        <p class="text-gray-300 leading-relaxed">Every dish is prepared using fresh, quality ingredients to ensure the best taste and nutrition.</p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="bg-slate-900 text-white p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow fade-in-up border border-slate-800" style="transition-delay: 200ms;">
+                        <div class="w-14 h-14 bg-yellow-500/10 rounded-2xl flex items-center justify-center text-brand-yellow mb-6">
+                            <i class="ph-fill ph-users text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Family Friendly</h3>
+                        <p class="text-gray-300 leading-relaxed">A welcoming space designed for families, friends, and everyone in between to gather and share.</p>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="bg-slate-900 text-white p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow fade-in-up border border-slate-800" style="transition-delay: 300ms;">
+                        <div class="w-14 h-14 bg-red-500/10 rounded-2xl flex items-center justify-center text-brand-red mb-6">
+                            <i class="ph-fill ph-bowl-food text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Classic Indian Flavors</h3>
+                        <p class="text-gray-300 leading-relaxed">Timeless dishes made for people who deeply love satisfying, authentic, and homely food.</p>
+                    </div>
+
+                    <!-- Feature 5 -->
+                    <div class="bg-slate-900 text-white p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow fade-in-up border border-slate-800" style="transition-delay: 400ms;">
+                        <div class="w-14 h-14 bg-yellow-500/10 rounded-2xl flex items-center justify-center text-brand-yellow mb-6">
+                            <i class="ph-fill ph-sun-horizon text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Lunch & Dinner</h3>
+                        <p class="text-gray-300 leading-relaxed">We are here to serve your cravings daily. Open continuously from 11:00 AM to 11:00 PM.</p>
+                    </div>
+
+                    <!-- Feature 6 -->
+                    <div class="bg-slate-900 text-white p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow fade-in-up border border-slate-800" style="transition-delay: 500ms;">
+                        <div class="w-14 h-14 bg-red-500/10 rounded-2xl flex items-center justify-center text-brand-red mb-6">
+                            <i class="ph-fill ph-smiley text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Warm Atmosphere</h3>
+                        <p class="text-gray-300 leading-relaxed">A lively yet relaxed place where everyone can enjoy a comforting meal together.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-24 bg-slate-900 text-white relative overflow-hidden">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="flex flex-col lg:flex-row items-center gap-16">
+                    <div class="lg:w-1/2 fade-in-up">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=1000" alt="Restaurant Interior" class="rounded-3xl shadow-xl w-full border border-slate-800">
+                            <!-- Floating element -->
+                            <div class="absolute -bottom-8 -right-8 bg-brand-yellow text-brand-black p-6 rounded-2xl shadow-lg hidden md:block">
+                                <p class="font-serif text-3xl font-bold">100%</p>
+                                <p class="font-medium text-sm">Fresh Ingredients</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 fade-in-up">
+                        <div class="inline-flex items-center gap-2 text-brand-yellow font-semibold tracking-wider uppercase text-sm mb-4">
+                            <i class="ph-fill ph-info"></i>
+                            About Us
+                        </div>
+                        <h2 class="font-serif text-4xl md:text-5xl font-bold text-white mb-6">Where Every Meal Feels Like Home</h2>
+                        
+                        <div class="prose prose-lg text-gray-300">
+                            <p class="mb-6 italic text-xl border-l-4 border-brand-yellow pl-4">
+                                “A place where everyone feels like family.”
+                            </p>
+                            <p class="mb-6">
+                                We serve up comforting, delicious dishes made from fresh ingredients, perfect for sharing with the people you love.
+                            </p>
+                            <p>
+                                From kids' favorites to timeless classics, there is a seat—and a perfect plate—waiting for everyone at our table. Our vision is simple: provide wholesome, affordable food without compromising on the authentic taste of home cooking.
+                            </p>
+                        </div>
+                        
+                        <div class="mt-10 grid grid-cols-2 gap-6 border-t border-slate-800 pt-8">
+                            <div>
+                                <h4 class="font-bold text-white text-lg mb-2">Location</h4>
+                                <p class="text-gray-400 text-sm">Sum Hospital Road,<br>Bhubaneswar, Odisha</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-lg mb-2">Service Type</h4>
+                                <p class="text-gray-400 text-sm">Dine-in Only<br>No Delivery/Reservations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Section -->
+        <section id="menu" class="py-24 bg-brand-cream">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="text-center max-w-3xl mx-auto mb-12 fade-in-up">
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-brand-black mb-4">Our Menu</h2>
+                    <p class="text-gray-800 text-lg mb-8">Discover our selection of homely vegetarian and non-vegetarian delights.</p>
+                    
+                    <!-- Search and Filter Controls -->
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-4 mb-8">
+                        <!-- Search -->
+                        <div class="relative w-full md:w-64">
+                            <i class="ph ph-magnifying-glass absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 text-lg"></i>
+                            <input type="text" id="menu-search" placeholder="Search dishes..." class="w-full pl-12 pr-4 py-3 rounded-full border-none shadow-sm focus:ring-2 focus:ring-brand-red outline-none text-gray-700 bg-white">
+                        </div>
+                        
+                        <!-- Filters -->
+                        <div class="flex flex-wrap bg-slate-900 rounded-full p-1 shadow-sm w-full md:w-auto">
+                            <button class="filter-btn active flex-1 md:flex-none px-4 md:px-6 py-2.5 rounded-full text-sm font-medium transition-colors bg-brand-red text-white" data-filter="all">All</button>
+                            <button class="filter-btn flex-1 md:flex-none px-4 md:px-6 py-2.5 rounded-full text-sm font-medium transition-colors text-gray-300 hover:text-white" data-filter="veg">Veg</button>
+                            <button class="filter-btn flex-1 md:flex-none px-4 md:px-6 py-2.5 rounded-full text-sm font-medium transition-colors text-gray-300 hover:text-white" data-filter="non-veg">Non-Veg</button>
+                            <button class="filter-btn flex-1 md:flex-none px-4 md:px-6 py-2.5 rounded-full text-sm font-medium transition-colors text-gray-300 hover:text-white" data-filter="odisha-special">Odisha Special</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Grid -->
+                <div id="menu-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 fade-in-up">
+                    <!-- Javascript will populate this -->
+                </div>
+                
+                <!-- No Results Message -->
+                <div id="no-results" class="hidden text-center py-12 text-gray-800">
+                    <i class="ph ph-magnifying-glass text-4xl mb-3"></i>
+                    <p class="text-lg">No dishes found matching your search.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lunch & Dinner Banner -->
+        <section class="py-16 bg-brand-black relative overflow-hidden">
+            <!-- Background Image with Overlay -->
+            <div class="absolute inset-0 opacity-40">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=2000" alt="Restaurant Ambiance" class="w-full h-full object-cover">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent"></div>
+            
+            <div class="container mx-auto px-4 md:px-6 relative z-10">
+                <div class="max-w-2xl text-white fade-in-up">
+                    <h2 class="font-serif text-3xl md:text-5xl font-bold mb-4">Lunch & Dinner</h2>
+                    <p class="text-xl text-gray-300 mb-2">We're here to serve you comforting meals from lunch through dinner.</p>
+                    <div class="inline-block bg-brand-yellow text-brand-black font-bold px-6 py-2 rounded-full mb-8">
+                        Open Daily: 11:00 AM – 11:00 PM
+                    </div>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#menu" class="bg-white text-brand-black hover:bg-gray-100 px-8 py-3.5 rounded-full font-semibold transition-all shadow-md flex items-center gap-2">
+                            View Full Menu
+                        </a>
+                        <a href="tel:2345672345" class="bg-brand-red text-white hover:bg-red-700 px-8 py-3.5 rounded-full font-semibold transition-all shadow-md flex items-center gap-2 border border-brand-red">
+                            <i class="ph-fill ph-phone"></i>
+                            Call Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-24 bg-slate-900 text-white">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="text-center max-w-2xl mx-auto mb-16 fade-in-up">
+                    <div class="inline-flex items-center gap-2 text-brand-yellow font-semibold tracking-wider uppercase text-sm mb-4">
+                        <i class="ph-fill ph-camera"></i>
+                        Moments
+                    </div>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-white mb-4">Our Gallery</h2>
+                    <p class="text-gray-300 text-lg">A glimpse into our food and atmosphere.</p>
+                </div>
+
+                <!-- Masonry-like Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 fade-in-up">
+                    <!-- Gallery Item 1 -->
+                    <div class="gallery-item cursor-pointer group rounded-2xl overflow-hidden aspect-square col-span-2 row-span-2 border border-slate-800">
+                        <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&q=80&w=800" alt="Bhata Dalma Alubhaja" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <i class="ph-fill ph-magnifying-glass-plus text-white text-4xl"></i>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 2 -->
+                    <div class="gallery-item cursor-pointer group rounded-2xl overflow-hidden aspect-square border border-slate-800">
+                        <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&q=80&w=600" alt="Chicken Curry" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <i class="ph-fill ph-magnifying-glass-plus text-white text-3xl"></i>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 3 -->
+                    <div class="gallery-item cursor-pointer group rounded-2xl overflow-hidden aspect-square border border-slate-800">
+                        <img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&q=80&w=600" alt="Family Dining" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <i class="ph-fill ph-magnifying-glass-plus text-white text-3xl"></i>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 4 -->
+                    <div class="gallery-item cursor-pointer group rounded-2xl overflow-hidden aspect-square border border-slate-800">
+                        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&q=80&w=600" alt="Rice and Dal" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <i class="ph-fill ph-magnifying-glass-plus text-white text-3xl"></i>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 5 -->
+                    <div class="gallery-item cursor-pointer group rounded-2xl overflow-hidden aspect-square border border-slate-800">
+                        <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&q=80&w=600" alt="Restaurant Interior" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <i class="ph-fill ph-magnifying-glass-plus text-white text-3xl"></i>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 6 -->
+                    <div class="gallery-item cursor-pointer group rounded-2xl overflow-hidden aspect-square md:col-span-2 border border-slate-800">
+                        <img src="https://images.unsplash.com/photo-1589301760014-d929f39ce9b0?auto=format&fit=crop&q=80&w=800" alt="Food Preparation" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <i class="ph-fill ph-magnifying-glass-plus text-white text-4xl"></i>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 7 -->
+                    <div class="gallery-item cursor-pointer group rounded-2xl overflow-hidden aspect-square hidden lg:block border border-slate-800">
+                        <img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&q=80&w=600" alt="Fish Curry Placeholder" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <i class="ph-fill ph-magnifying-glass-plus text-white text-3xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location & Contact -->
+        <section id="contact" class="py-0">
+            <div class="flex flex-col lg:flex-row min-h-[600px]">
+                
+                <!-- Map Area -->
+                <div class="lg:w-1/2 relative bg-gray-200 min-h-[400px]">
+                    <!-- Embed Google Maps iframe -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m3!1d14969.832791834164!2d85.7924403158021!3d20.281313799292837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1909a4731a5477%3A0xe4c619962a931a26!2sSUM%20Hospital%20Rd%2C%20Bhubaneswar%2C%20Odisha!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                        class="absolute inset-0 w-full h-full border-0" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="lg:w-1/2 bg-brand-black text-white p-12 md:p-16 lg:p-24 flex flex-col justify-center">
+                    <div class="max-w-lg fade-in-up">
+                        <h2 class="font-serif text-4xl md:text-5xl font-bold mb-8">Come Visit Us</h2>
+                        
+                        <div class="space-y-6 text-gray-300 mb-10">
+                            <div class="flex items-start gap-4">
+                                <i class="ph-fill ph-map-pin text-2xl text-brand-red mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-white text-lg mb-1">Ghar ka Khana</h4>
+                                    <p>Sum Hospital Road, beside Mo Bus Stand,<br>Bhubaneswar, Odisha</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <i class="ph-fill ph-phone text-2xl text-brand-red mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-white text-lg mb-1">Call Us</h4>
+                                    <p>2345672345</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <i class="ph-fill ph-clock text-2xl text-brand-red mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-white text-lg mb-1">Opening Hours</h4>
+                                    <p>11:00 AM – 11:00 PM<br>(Lunch & Dinner)</p>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 p-4 bg-white/10 rounded-xl border border-white/20">
+                                <p class="text-white text-center font-medium">
+                                    <i class="ph ph-info mr-2"></i> Dine-in restaurant — No home delivery available.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://maps.google.com/?q=Ghar+ka+Khana,+Sum+Hospital+Road,+beside+Mo+Bus+Stand,+Bhubaneswar,+Odisha" target="_blank" class="bg-brand-red hover:bg-red-700 text-white px-8 py-3.5 rounded-full font-semibold transition-all shadow-md flex items-center gap-2">
+                                <i class="ph-fill ph-navigation-arrow"></i>
+                                Get Directions
+                            </a>
+                            <a href="tel:2345672345" class="bg-transparent border-2 border-brand-yellow hover:bg-brand-yellow hover:text-brand-black text-brand-yellow px-8 py-3.5 rounded-full font-semibold transition-all flex items-center gap-2">
+                                <i class="ph-fill ph-phone"></i>
+                                Call Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <!-- Brand -->
+                <div class="col-span-1 md:col-span-2 lg:col-span-1">
+                    <a href="#" class="font-serif text-2xl font-bold text-brand-red tracking-tight mb-4 inline-block">Ghar ka Khana</a>
+                    <p class="mb-6">“Where every meal feels like home.”</p>
+                    <div class="flex gap-4">
+                        <!-- Social Placeholders -->
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-yellow hover:text-brand-black transition-colors">
+                            <i class="ph-fill ph-instagram-logo text-xl"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-yellow hover:text-brand-black transition-colors">
+                            <i class="ph-fill ph-facebook-logo text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-brand-red transition-colors">Home</a></li>
+                        <li><a href="#menu" class="hover:text-brand-red transition-colors">Menu</a></li>
+                        <li><a href="#about" class="hover:text-brand-red transition-colors">About</a></li>
+                        <li><a href="#gallery" class="hover:text-brand-red transition-colors">Gallery</a></li>
+                        <li><a href="#contact" class="hover:text-brand-red transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">Contact Info</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start gap-2">
+                            <i class="ph ph-map-pin mt-1"></i>
+                            Sum Hospital Road, beside Mo Bus Stand, Bhubaneswar, Odisha
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="ph ph-phone"></i>
+                            2345672345
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Hours -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">Opening Hours</h4>
+                    <p class="text-sm">Monday - Sunday</p>
+                    <p class="text-brand-yellow font-bold mt-1">11:00 AM – 11:00 PM</p>
+                    <p class="text-xs mt-2 italic">* Lunch & Dinner</p>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-gray-800 text-center text-sm flex flex-col md:flex-row justify-between items-center gap-4">
+                <p>&copy; 2026 Ghar ka Khana. All rights reserved.</p>
+                <p>Designed for Family Dining.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky Action Bar -->
+    <div class="fixed bottom-0 left-0 w-full bg-slate-900 border-t border-slate-800 shadow-[0_-5px_15px_rgba(0,0,0,0.3)] z-40 lg:hidden flex justify-around items-center pb-safe pt-2 pb-2 px-2">
+        <a href="tel:2345672345" class="flex flex-col items-center justify-center p-2 text-white hover:text-brand-yellow w-1/3">
+            <div class="bg-green-500/20 p-2 rounded-full mb-1">
+                <i class="ph-fill ph-phone text-green-400 text-xl"></i>
+            </div>
+            <span class="text-xs font-semibold">Call Now</span>
+        </a>
+        <a href="#menu" class="flex flex-col items-center justify-center p-2 text-white hover:text-brand-yellow w-1/3 border-l border-r border-slate-800">
+            <div class="bg-yellow-500/20 p-2 rounded-full mb-1">
+                <i class="ph-fill ph-book-open text-brand-yellow text-xl"></i>
+            </div>
+            <span class="text-xs font-semibold">Menu</span>
+        </a>
+        <a href="https://maps.google.com/?q=Ghar+ka+Khana,+Sum+Hospital+Road,+beside+Mo+Bus+Stand,+Bhubaneswar,+Odisha" target="_blank" class="flex flex-col items-center justify-center p-2 text-white hover:text-brand-yellow w-1/3">
+            <div class="bg-red-500/20 p-2 rounded-full mb-1">
+                <i class="ph-fill ph-navigation-arrow text-brand-red text-xl"></i>
+            </div>
+            <span class="text-xs font-semibold">Directions</span>
+        </a>
+    </div>
+
+    <!-- Lightbox Modal for Gallery -->
+    <div id="lightbox" class="fixed inset-0 bg-black/90 z-[60] hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4">
+        <button id="lightbox-close" class="absolute top-6 right-6 text-white hover:text-brand-yellow p-2 focus:outline-none">
+            <i class="ph ph-x text-3xl"></i>
+        </button>
+        <img id="lightbox-img" src="" alt="Enlarged view" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl transform scale-95 transition-transform duration-300">
+    </div>
+
+    <!-- Padding for mobile safe area at bottom due to sticky bar -->
+    <div class="h-20 lg:h-0"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- 1. Menu Data & Rendering Logic ---
+            const menuData = [
+                // Odisha Specials
+                { id: 101, name: "Odia Bhata Dalma", category: "odisha-special", price: "₹XX", desc: "The soul of Odisha. Steamed rice served with nutritious roasted lentil and vegetable dalma, accompanied by crispy alubhaja.", img: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&q=80&w=400" },
+                { id: 102, name: "Pakhala Bhata", category: "odisha-special", price: "₹XX", desc: "Traditional fermented water rice, perfect for summer. Served with badi chura, saga bhaja, and aloo bharta.", img: "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&q=80&w=400" },
+                { id: 103, name: "Chhena Poda", category: "odisha-special", price: "₹XX", desc: "Odisha's signature roasted cheese dessert with caramelized sugar and nuts.", img: "https://images.unsplash.com/photo-1605859817926-0e1ce6302e3b?auto=format&fit=crop&q=80&w=400" },
+                { id: 104, name: "Santula", category: "odisha-special", price: "₹XX", desc: "A healthy, lightly spiced mixed vegetable curry boiled and sautéed with garlic and green chilies.", img: "https://images.unsplash.com/photo-1548943487-a2e4e43b4859?auto=format&fit=crop&q=80&w=400" },
+                { id: 105, name: "Macha Besara", category: "odisha-special", price: "₹XX", desc: "Traditional Odia fish curry cooked in a pungent mustard paste with dried mango (ambula).", img: "https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?auto=format&fit=crop&q=80&w=400" },
+
+                // Vegetarian
+                { id: 1, name: "Plain Rice", category: "veg", price: "₹XX", desc: "Freshly steamed white rice.", img: "https://images.unsplash.com/photo-1536304929831-ee1ca9d44906?auto=format&fit=crop&q=80&w=400" },
+                { id: 2, name: "Dal Fry", category: "veg", price: "₹XX", desc: "Yellow lentils tempered with mild spices.", img: "https://images.unsplash.com/photo-1548943487-a2e4e43b4859?auto=format&fit=crop&q=80&w=400" },
+                { id: 3, name: "Authentic Dalma", category: "veg", price: "₹XX", desc: "Traditional Odia preparation of lentils and roasted vegetables.", img: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&q=80&w=400" },
+                { id: 4, name: "Crispy Alubhaja", category: "veg", price: "₹XX", desc: "Thinly sliced, crispy fried potatoes.", img: "https://images.unsplash.com/photo-1573215886678-8316c026dc8c?auto=format&fit=crop&q=80&w=400" },
+                { id: 5, name: "Mix Veg Curry", category: "veg", price: "₹XX", desc: "Seasonal vegetables in a rich, comforting gravy.", img: "https://images.unsplash.com/photo-1625944227301-44755a5b51d3?auto=format&fit=crop&q=80&w=400" },
+                { id: 6, name: "Dhaba Style Tadka", category: "veg", price: "₹XX", desc: "Spiced lentil dish cooked to perfection.", img: "https://images.unsplash.com/photo-1512152272829-e3139592d56f?auto=format&fit=crop&q=80&w=400" },
+                { id: 7, name: "Soyabin Aloo", category: "veg", price: "₹XX", desc: "Soya chunks and potatoes in a homely masala.", img: "https://images.unsplash.com/photo-1631452180519-c014fe946bc0?auto=format&fit=crop&q=80&w=400" },
+                { id: 8, name: "Traditional Besara", category: "veg", price: "₹XX", desc: "Vegetables cooked in an authentic mustard paste.", img: "https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&q=80&w=400" },
+                { id: 9, name: "Chana Masala", category: "veg", price: "₹XX", desc: "Chickpeas simmered in a spiced tomato gravy.", img: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&q=80&w=400" },
+                { id: 16, name: "Saga Bhaja", category: "veg", price: "₹XX", desc: "Simple and nutritious stir-fried seasonal leafy greens.", img: "https://images.unsplash.com/photo-1600813958933-4f9e1e30953f?auto=format&fit=crop&q=80&w=400" },
+                
+                // Non-Vegetarian
+                { id: 10, name: "Homestyle Chicken Curry", category: "non-veg", price: "₹XX", desc: "Tender chicken cooked in traditional spices.", img: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&q=80&w=400" },
+                { id: 11, name: "Classic Egg Curry", category: "non-veg", price: "₹XX", desc: "Boiled eggs in a rich onion-tomato gravy.", img: "https://images.unsplash.com/photo-1546253457-3f3f5080de0b?auto=format&fit=crop&q=80&w=400" },
+                { id: 12, name: "Odia Fish Curry (Macha Jhola)", category: "non-veg", price: "₹XX", desc: "Fresh fish in a flavorful, light mustard gravy.", img: "https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?auto=format&fit=crop&q=80&w=400" },
+                { id: 13, name: "Mati Handi Mutton", category: "non-veg", price: "₹XX", desc: "Slow-cooked mutton prepared in an earthen pot for an earthy flavor.", img: "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&q=80&w=400" },
+                { id: 14, name: "Prawn Masala (Chingudi Jhola)", category: "non-veg", price: "₹XX", desc: "Succulent prawns tossed in a thick, spicy traditional masala.", img: "https://images.unsplash.com/photo-1559742811-822873691df8?auto=format&fit=crop&q=80&w=400" },
+                { id: 15, name: "Chicken Kasa", category: "non-veg", price: "₹XX", desc: "Dry, heavily spiced preparation of chicken.", img: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&q=80&w=400" }
+            ];
+
+            const menuContainer = document.getElementById('menu-container');
+            const searchInput = document.getElementById('menu-search');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const noResults = document.getElementById('no-results');
+
+            let currentFilter = 'all';
+            let searchQuery = '';
+
+            function renderMenu() {
+                // Filter logic
+                const filteredData = menuData.filter(item => {
+                    const matchesFilter = currentFilter === 'all' || item.category === currentFilter;
+                    const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                                          item.desc.toLowerCase().includes(searchQuery.toLowerCase());
+                    return matchesFilter && matchesSearch;
+                });
+
+                menuContainer.innerHTML = '';
+
+                if (filteredData.length === 0) {
+                    noResults.classList.remove('hidden');
+                } else {
+                    noResults.classList.add('hidden');
+                    filteredData.forEach(item => {
+                        const isVeg = item.category === 'veg' || item.id === 101 || item.id === 102 || item.id === 103 || item.id === 104 || item.id === 16;
+                        const markClass = isVeg ? 'veg-mark' : 'non-veg-mark';
+                        
+                        const badgeHtml = item.category === 'odisha-special' ? 
+                            `<div class="absolute top-4 left-4 bg-brand-yellow/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-brand-black shadow-sm flex items-center gap-1"><i class="ph-fill ph-star"></i> Odisha Special</div>` : '';
+
+                        const card = `
+                            <div class="bg-slate-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-slate-800 flex flex-col text-white">
+                                <div class="relative h-48 overflow-hidden bg-slate-800">
+                                    ${badgeHtml}
+                                    <img src="${item.img}" alt="${item.name}" class="w-full h-full object-cover" loading="lazy">
+                                    <div class="absolute top-4 right-4 bg-slate-900/90 backdrop-blur-sm px-3 py-1 rounded-full font-bold text-white shadow-sm border border-slate-800">
+                                        ${item.price}
+                                    </div>
+                                </div>
+                                <div class="p-6 flex-grow flex flex-col">
+                                    <div class="flex items-start justify-between mb-2">
+                                        <h3 class="text-xl font-bold text-white pr-4">${item.name}</h3>
+                                        <div class="w-4 h-4 rounded-sm flex-shrink-0 flex items-center justify-center mt-1 ${markClass}">
+                                            <div class="w-2 h-2 rounded-full"></div>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-300 text-sm flex-grow">${item.desc}</p>
+                                </div>
+                            </div>
+                        `;
+                        menuContainer.insertAdjacentHTML('beforeend', card);
+                    });
+                }
+            }
+
+            // Event Listeners for Menu Filters
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    // Update active styling
+                    filterBtns.forEach(b => {
+                        b.classList.remove('bg-brand-red', 'text-white');
+                        b.classList.add('text-gray-300');
+                    });
+                    e.target.classList.remove('text-gray-300');
+                    e.target.classList.add('bg-brand-red', 'text-white');
+
+                    currentFilter = e.target.getAttribute('data-filter');
+                    renderMenu();
+                });
+            });
+
+            // Event Listener for Search
+            searchInput.addEventListener('input', (e) => {
+                searchQuery = e.target.value;
+                renderMenu();
+            });
+
+            // Initial render
+            renderMenu();
+
+
+            // --- 2. Mobile Menu Toggle ---
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            let menuOpen = false;
+
+            function toggleMenu() {
+                menuOpen = !menuOpen;
+                if (menuOpen) {
+                    mobileMenu.classList.remove('translate-x-full');
+                    menuIcon.classList.remove('ph-list');
+                    menuIcon.classList.add('ph-x');
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling
+                } else {
+                    mobileMenu.classList.add('translate-x-full');
+                    menuIcon.classList.remove('ph-x');
+                    menuIcon.classList.add('ph-list');
+                    document.body.style.overflow = '';
+                }
+            }
+
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', toggleMenu);
+            });
+
+
+            // --- 3. Lightbox functionality for Gallery ---
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxClose = document.getElementById('lightbox-close');
+
+            galleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const img = item.querySelector('img').src;
+                    lightboxImg.src = img;
+                    
+                    lightbox.classList.remove('hidden');
+                    // Small delay to allow display:block to apply before animating opacity
+                    setTimeout(() => {
+                        lightbox.classList.remove('opacity-0');
+                        lightboxImg.classList.remove('scale-95');
+                        lightboxImg.classList.add('scale-100');
+                    }, 10);
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            function closeLightbox() {
+                lightbox.classList.add('opacity-0');
+                lightboxImg.classList.remove('scale-100');
+                lightboxImg.classList.add('scale-95');
+                
+                setTimeout(() => {
+                    lightbox.classList.add('hidden');
+                    document.body.style.overflow = '';
+                    lightboxImg.src = '';
+                }, 300);
+            }
+
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+
+            // --- 4. Scroll Animations (Intersection Observer) ---
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in-up').forEach(element => {
+                observer.observe(element);
+            });
+
+
+            // --- 5. Sticky Header styling on scroll ---
+            const header = document.getElementById('main-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    header.classList.add('shadow-md');
+                } else {
+                    header.classList.remove('shadow-md');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
